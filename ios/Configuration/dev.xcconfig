@@ -1,0 +1,4 @@
+#include "shared.xcconfig"
+PRODUCT_NAME=Flutter Template Dev
+PRODUCT_BUNDLE_IDENTIFIER=com.example.flutter_template.dev
+FLUTTER_TARGET=lib/main.dart
