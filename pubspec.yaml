@@ -9,15 +9,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_navigation_generator_annotations: ^1.0.1
   impaktfull_architecture:
     git: 
       url: git@github.com:Impaktfull/flutter_architecture.git
-      ref: 3ac8d3a
+      ref: 2ddbb15
 
 dev_dependencies:
+  build_runner: ^2.4.7
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_navigation_generator: ^1.0.3
+  injectable_generator: ^2.4.1
 
 flutter:
   uses-material-design: true
