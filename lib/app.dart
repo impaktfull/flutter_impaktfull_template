@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/di/injectable.dart';
 import 'package:flutter_template/navigator/main_navigator.dart';
 import 'package:flutter_template/navigator/main_navigator.navigator.dart';
+import 'package:flutter_template/theme/theme.dart';
+import 'package:flutter_template/viewmodel/global_viewmodel.dart';
+import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -11,15 +14,16 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mainNavigator = getIt<MainNavigator>();
-    return MaterialApp(
-      title: 'Flutter Template',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ProviderWidget<GlobalViewModel>(
+      create: () => getIt()..init(),
+      builder: (context, viewModel) => MaterialApp(
+        title: 'Flutter Template',
+        theme: AppTheme.lightTheme(viewModel.targetPlatform),
+        darkTheme: AppTheme.darkTheme(viewModel.targetPlatform),
+        navigatorKey: mainNavigator.navigatorKey,
+        initialRoute: RouteNames.splashScreen,
+        onGenerateRoute: mainNavigator.onGenerateRoute,
       ),
-      navigatorKey: mainNavigator.navigatorKey,
-      initialRoute: RouteNames.splashScreen,
-      onGenerateRoute: mainNavigator.onGenerateRoute,
     );
   }
 }
