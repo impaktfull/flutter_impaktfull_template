@@ -9,6 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  impaktfull_architecture:
+    git: 
+      url: git@github.com:Impaktfull/flutter_architecture.git
+      ref: 3ac8d3a
 
 dev_dependencies:
   flutter_test:

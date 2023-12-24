@@ -1,3 +1,4 @@
+#include "Pods/Targe Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
 #include "shared.xcconfig"
 PRODUCT_NAME=Flutter Template
 PRODUCT_BUNDLE_IDENTIFIER=com.example.flutter_template
