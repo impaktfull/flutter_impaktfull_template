@@ -9,11 +9,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_navigation_generator_annotations: ^1.0.1
   impaktfull_architecture:
     git: 
       url: git@github.com:Impaktfull/flutter_architecture.git
-      ref: 2ddbb15
+      ref: 27c356a
+  sprintf: ^7.0.0
 
 dev_dependencies:
   build_runner: ^2.4.7
@@ -22,7 +25,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_navigation_generator: ^1.0.3
   injectable_generator: ^2.4.1
-
+  locale_gen: ^12.0.0
+  
 flutter:
   uses-material-design: true
   assets:
@@ -35,3 +39,7 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/poppins/poppins_regular.ttf
+
+locale_gen:
+  default_language: 'en'
+  languages: ['en', 'nl']

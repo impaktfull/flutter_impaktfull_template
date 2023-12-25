@@ -8,8 +8,10 @@
 import 'package:flutter/material.dart' as _i1;
 import 'package:flutter/material.dart';
 
-import '../screen/home_screen.dart';
-import '../screen/splash_screen.dart';
+import '../screen/debug/debug_change_language_screen.dart';
+import '../screen/debug/debug_screen.dart';
+import '../screen/home/home_screen.dart';
+import '../screen/splash/splash_screen.dart';
 
 mixin BaseNavigator {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -32,6 +34,22 @@ mixin BaseNavigator {
           settings: settings,
           fullscreenDialog: false,
         );
+      case RouteNames.debugChangeLanguageScreen:
+        return MaterialPageRoute<void>(
+          builder: (_) => DebugChangeLanguageScreen(
+            key: (settings.arguments as Map<String, dynamic>?)?['key'] as Key?,
+          ),
+          settings: settings,
+          fullscreenDialog: false,
+        );
+      case RouteNames.debugScreen:
+        return MaterialPageRoute<void>(
+          builder: (_) => DebugScreen(
+            key: (settings.arguments as Map<String, dynamic>?)?['key'] as Key?,
+          ),
+          settings: settings,
+          fullscreenDialog: false,
+        );
     }
     return null;
   }
@@ -45,6 +63,16 @@ mixin BaseNavigator {
   Future<void> goToSplashScreen({_i1.Key? key}) async =>
       navigatorKey.currentState?.pushNamed<dynamic>(
         RouteNames.splashScreen,
+        arguments: {'key': key},
+      );
+  Future<void> goToDebugChangeLanguageScreen({_i1.Key? key}) async =>
+      navigatorKey.currentState?.pushNamed<dynamic>(
+        RouteNames.debugChangeLanguageScreen,
+        arguments: {'key': key},
+      );
+  Future<void> goToDebugScreen({_i1.Key? key}) async =>
+      navigatorKey.currentState?.pushNamed<dynamic>(
+        RouteNames.debugScreen,
         arguments: {'key': key},
       );
   void goBack() => navigatorKey.currentState?.pop();
@@ -69,4 +97,8 @@ class RouteNames {
   static const homeScreen = '/home';
 
   static const splashScreen = '/splash';
+
+  static const debugChangeLanguageScreen = '/debug-change-language';
+
+  static const debugScreen = '/debug';
 }

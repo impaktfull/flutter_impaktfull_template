@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/navigator/main_navigator.dart';
 import 'package:flutter_template/navigator/main_navigator.navigator.dart';
 import 'package:flutter_template/theme/theme.dart';
-import 'package:flutter_template/viewmodel/global_viewmodel.dart';
-import 'package:impaktfull_architecture/impaktfull_architecture.dart';
+import 'package:flutter_template/widget/di/dependency_tree.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -13,13 +10,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mainNavigator = getIt<MainNavigator>();
-    return ProviderWidget<GlobalViewModel>(
-      create: () => getIt()..init(),
-      builder: (context, viewModel) => MaterialApp(
-        title: 'Flutter Template',
-        theme: AppTheme.lightTheme(viewModel.targetPlatform),
-        darkTheme: AppTheme.darkTheme(viewModel.targetPlatform),
+    return DependencyTreeWidget(
+      builder: (context, globalViewModel, translationsViewmodel, mainNavigator) => MaterialApp(
+        theme: AppTheme.lightTheme(globalViewModel.targetPlatform),
+        darkTheme: AppTheme.darkTheme(globalViewModel.targetPlatform),
+        locale: translationsViewmodel.locale,
+        supportedLocales: translationsViewmodel.supportedLocales,
+        localizationsDelegates: translationsViewmodel.localizationDelegates,
         navigatorKey: mainNavigator.navigatorKey,
         initialRoute: RouteNames.splashScreen,
         onGenerateRoute: mainNavigator.onGenerateRoute,

@@ -262,6 +262,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  flutter_localizations:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_navigation_generator:
     dependency: "direct dev"
     description:
@@ -396,8 +401,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "2ddbb15"
-      resolved-ref: "2ddbb15d99d0d4a98cee78481b1f5f471b6cdc86"
+      ref: "27c356a"
+      resolved-ref: "27c356a6992129d239bfb849422bb23667ca24e8"
       url: "git@github.com:Impaktfull/flutter_architecture.git"
     source: git
     version: "0.0.1"
@@ -417,6 +422,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.1"
   io:
     dependency: transitive
     description:
@@ -449,6 +462,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  locale_gen:
+    dependency: "direct dev"
+    description:
+      name: locale_gen
+      sha256: "00c99b44971e52ea774a59987f3fa20f18c7cb5536b2ddbbd5365b8532185f0b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "12.0.0"
   logging:
     dependency: transitive
     description:
@@ -735,7 +756,7 @@ packages:
     source: hosted
     version: "1.10.0"
   sprintf:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: sprintf
       sha256: "1fc9ffe69d4df602376b52949af107d8f5703b77cda567c4d7d86a0693120f23"
