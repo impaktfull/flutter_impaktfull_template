@@ -401,8 +401,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "6e866d2492e69d9410af78f3ff4f65e6f2a6c0b6"
-      resolved-ref: "6e866d2492e69d9410af78f3ff4f65e6f2a6c0b6"
+      ref: e1166d4
+      resolved-ref: e1166d40f3607ed9c47df33105b16f1b1b8e134d
       url: "git@github.com:Impaktfull/flutter_architecture.git"
     source: git
     version: "0.0.1"

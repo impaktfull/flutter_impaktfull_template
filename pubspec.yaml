@@ -15,7 +15,7 @@ dependencies:
   impaktfull_architecture:
     git: 
       url: git@github.com:Impaktfull/flutter_architecture.git
-      ref: 6e866d2492e69d9410af78f3ff4f65e6f2a6c0b6
+      ref: e1166d4
   sprintf: ^7.0.0
 
 dev_dependencies:

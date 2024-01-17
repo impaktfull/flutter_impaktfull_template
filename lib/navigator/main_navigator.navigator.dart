@@ -7,6 +7,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i1;
 import 'package:flutter/material.dart';
+import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 import '../screen/debug/debug_change_language_screen.dart';
 import '../screen/debug/debug_screen.dart';
@@ -19,7 +20,7 @@ mixin BaseNavigator {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteNames.homeScreen:
-        return MaterialPageRoute<void>(
+        return FadeInRoute<void>(
           builder: (_) => HomeScreen(
             key: (settings.arguments as Map<String, dynamic>?)?['key'] as Key?,
           ),
