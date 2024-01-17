@@ -18,4 +18,6 @@ class DebugViewModel extends ChangeNotifierEx {
   String getCurrentLanguage(Localization localization) => _translationsViewmodel.getCurrentLanguage(localization);
 
   void onChangeLanguageTapped() => _mainNavigator.goToDebugChangeLanguageScreen();
+
+  void onBackTapped() => _mainNavigator.goBack();
 }

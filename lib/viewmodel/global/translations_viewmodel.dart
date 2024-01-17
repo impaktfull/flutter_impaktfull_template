@@ -41,6 +41,7 @@ class TranslationsViewmodel extends ChangeNotifierEx {
     _localeDelegate = LocalizationDelegate(
       newLocale: locale,
     );
+    if (disposed) return;
     notifyListeners();
   }
 

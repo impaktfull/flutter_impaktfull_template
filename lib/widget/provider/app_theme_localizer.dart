@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_template/theme/app_theme.dart';
+import 'package:flutter_template/util/locale/localization.dart';
+import 'package:impaktfull_architecture/impaktfull_architecture.dart';
+
+class AppThemeLocalizer extends StatelessWidget {
+  final Widget Function(BuildContext context, AppTheme theme)? builderTheme;
+  final Widget Function(BuildContext context, Localization localization)? builderLocalizations;
+  final Widget Function(BuildContext context, AppTheme theme, Localization localization)? builder;
+
+  const AppThemeLocalizer({
+    this.builder,
+    this.builderTheme,
+    this.builderLocalizations,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ThemeLocalizer(
+      builder: builder,
+      builderTheme: builderTheme,
+      builderLocalizations: builderLocalizations,
+    );
+  }
+}

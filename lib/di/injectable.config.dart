@@ -44,8 +44,11 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i7.SplashViewmodel(gh<_i6.MainNavigator>()));
     gh.lazySingleton<_i8.TranslationsViewmodel>(
         () => _i8.TranslationsViewmodel(gh<_i5.LocaleRepository>()));
-    gh.factory<_i9.DebugChangeLanguageViewModel>(() =>
-        _i9.DebugChangeLanguageViewModel(gh<_i8.TranslationsViewmodel>()));
+    gh.factory<_i9.DebugChangeLanguageViewModel>(
+        () => _i9.DebugChangeLanguageViewModel(
+              gh<_i8.TranslationsViewmodel>(),
+              gh<_i6.MainNavigator>(),
+            ));
     gh.factory<_i10.DebugViewModel>(() => _i10.DebugViewModel(
           gh<_i6.MainNavigator>(),
           gh<_i8.TranslationsViewmodel>(),

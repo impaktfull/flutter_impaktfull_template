@@ -15,7 +15,7 @@ dependencies:
   impaktfull_architecture:
     git: 
       url: git@github.com:Impaktfull/flutter_architecture.git
-      ref: 27c356a
+      ref: 6e866d2492e69d9410af78f3ff4f65e6f2a6c0b6
   sprintf: ^7.0.0
 
 dev_dependencies:
@@ -31,14 +31,14 @@ flutter:
   uses-material-design: true
   assets:
     - assets/fonts/
-    - assets/fonts/poppins/
+    - assets/fonts/ubuntu/
     - assets/locale/
     - assets/images/
     - assets/images/icons/
   fonts:
-    - family: Poppins
+    - family: Ubuntu
       fonts:
-        - asset: assets/fonts/poppins/poppins_regular.ttf
+        - asset: assets/fonts/ubuntu/ubuntu_regular.ttf
 
 locale_gen:
   default_language: 'en'

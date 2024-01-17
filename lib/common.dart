@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/theme/theme.dart';
+import 'package:flutter_template/theme/app_theme.dart';
 import 'package:flutter_template/util/locale/localization.dart';
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/navigator/main_navigator.dart';
 import 'package:flutter_template/util/locale/localization.dart';
 import 'package:flutter_template/viewmodel/global/translations_viewmodel.dart';
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 @injectable
 class DebugChangeLanguageViewModel extends ChangeNotifierEx {
-  final TranslationsViewmodel translationsViewmodel;
+  final TranslationsViewmodel _translationsViewmodel;
+  final MainNavigator _mainNavigator;
 
   List<Locale> get supportedLocales => [
-        ...translationsViewmodel.supportedLocales,
+        ..._translationsViewmodel.supportedLocales,
       ];
 
   DebugChangeLanguageViewModel(
-    this.translationsViewmodel,
+    this._translationsViewmodel,
+    this._mainNavigator,
   );
 
   Future<void> init() async {}
@@ -21,12 +24,14 @@ class DebugChangeLanguageViewModel extends ChangeNotifierEx {
     Locale? locale,
     Localization localization,
   ) =>
-      translationsViewmodel.getTranslatedLocale(locale, localization);
+      _translationsViewmodel.getTranslatedLocale(locale, localization);
 
   Future<void> onLocaleTapped(Locale? locale) async {
-    await translationsViewmodel.switchToLocale(locale);
+    await _translationsViewmodel.switchToLocale(locale);
     notifyListeners();
   }
 
-  bool isLocaleSelected(Locale? locale) => translationsViewmodel.isLocaleSelected(locale);
+  bool isLocaleSelected(Locale? locale) => _translationsViewmodel.isLocaleSelected(locale);
+
+  void onBackTapped() => _mainNavigator.goBack();
 }

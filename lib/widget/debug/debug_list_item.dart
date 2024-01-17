@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/widget/provider/app_theme_localizer.dart';
 
 class DebugListItem extends StatelessWidget {
   final String title;
@@ -16,34 +17,41 @@ class DebugListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        color: Colors.transparent,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 12,
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(title),
-                    if (subtitle != null) ...[
+    return AppThemeLocalizer(
+      builderTheme: (context, theme) => GestureDetector(
+        onTap: onTap,
+        child: Container(
+          color: Colors.transparent,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 12,
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Text(
-                        subtitle!,
+                        title,
+                        style: theme.textStyles.primary.listItemTitle,
                       ),
+                      if (subtitle != null) ...[
+                        const SizedBox(height: 4),
+                        Text(
+                          subtitle!,
+                          style: theme.textStyles.primary.body,
+                        ),
+                      ],
                     ],
-                  ],
+                  ),
                 ),
-              ),
-              if (trailing != null) ...[
-                trailing!,
-              ]
-            ],
+                if (trailing != null) ...[
+                  trailing!,
+                ]
+              ],
+            ),
           ),
         ),
       ),
