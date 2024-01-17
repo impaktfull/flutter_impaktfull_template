@@ -26,6 +26,7 @@ dev_dependencies:
   flutter_navigation_generator: ^1.0.3
   injectable_generator: ^2.4.1
   locale_gen: ^12.0.0
+  impaktfull_cli: ^0.10.12
   
 flutter:
   uses-material-design: true
