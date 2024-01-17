@@ -11,6 +11,7 @@ class FlavorBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (FlavorConfig.isProd()) return child;
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Banner(
