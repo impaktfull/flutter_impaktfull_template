@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_template/navigator/main_navigator.dart';
 import 'package:flutter_template/util/locale/localization.dart';
 import 'package:flutter_template/viewmodel/global/translations_viewmodel.dart';

@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_navigation_generator_annotations/flutter_navigation_generator_annotations.dart';
 import 'package:flutter_template/di/injectable.dart';
 import 'package:flutter_template/viewmodel/splash/splash_viewmodel.dart';
-import 'package:flutter_template/widget/general/loading/loading_indicator.dart';
 import 'package:flutter_template/widget/provider/provider_widget.dart';
+import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 @flutterRoute
 class SplashScreen extends StatelessWidget {
@@ -18,7 +17,7 @@ class SplashScreen extends StatelessWidget {
       builderWithThemeAndLocalizations: (context, viewModel, theme, localization) => Scaffold(
         backgroundColor: theme.colors.primary,
         body: const Center(
-          child: LoadingIndicator(),
+          child: ImpaktfullLoadingIndicator(),
         ),
       ),
     );

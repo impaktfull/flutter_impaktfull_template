@@ -1,8 +1,8 @@
 {
-    "home_title": "Flutter Template",
-    "home_body": "Je hebt zo veel keer op de knop gedrukt:",
-    "debug_title": "Debug",
-    "debug_list_item_change_langague": "Taal veranderen",
-    "debug_change_language_title": "Taal veranderen",
-    "general_system_language": "Taal van het systeem"
+  "debug_change_language_title": "Taal veranderen",
+  "debug_list_item_change_langague": "Taal veranderen",
+  "debug_title": "Debug",
+  "general_system_language": "Taal van het systeem",
+  "home_body": "Je hebt zo veel keer op de knop gedrukt:",
+  "home_title": "Flutter Template"
 }

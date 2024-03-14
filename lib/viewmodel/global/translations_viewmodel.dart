@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_template/repo/locale/locale_repository.dart';
 import 'package:flutter_template/util/locale/localization.dart';

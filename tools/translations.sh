@@ -1,3 +1,6 @@
 #!/bin/bash
 
-fvm flutter packages pub run locale_gen
+fvm dart run locale_gen:format
+fvm dart run locale_gen
+
+./tools/format.sh

@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_template/navigator/main_navigator.navigator.dart';
 import 'package:flutter_template/theme/app_theme.dart';
 import 'package:flutter_template/widget/debug/flavor_flag.dart';
 import 'package:flutter_template/widget/di/dependency_tree.dart';
+import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -13,9 +13,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return DependencyTreeWidget(
       builder: (context, globalViewModel, translationsViewmodel, mainNavigator) => FlavorBanner(
-        child: MaterialApp(
-          theme: AppTheme.lightTheme(globalViewModel.targetPlatform),
-          darkTheme: AppTheme.darkTheme(globalViewModel.targetPlatform),
+        child: ImpaktfullApp(
+          title: 'Impaktfull Flutter Template',
+          impaktfullTheme: AppTheme.getTheme(),
           locale: translationsViewmodel.locale,
           supportedLocales: translationsViewmodel.supportedLocales,
           localizationsDelegates: translationsViewmodel.localizationDelegates,

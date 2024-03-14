@@ -1,8 +1,8 @@
 {
-    "home_title": "Flutter Template",
-    "home_body": "You have pushed the button this many times:",
-    "debug_title": "Debug",
-    "debug_list_item_change_langague": "Change language",
-    "debug_change_language_title": "Change language",
-    "general_system_language": "System language"
+  "debug_change_language_title": "Change language",
+  "debug_list_item_change_langague": "Change language",
+  "debug_title": "Debug",
+  "general_system_language": "System language",
+  "home_body": "You have pushed the button this many times:",
+  "home_title": "Flutter Template"
 }

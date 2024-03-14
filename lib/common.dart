@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/theme/app_theme.dart';
 import 'package:flutter_template/util/locale/localization.dart';
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
@@ -11,7 +9,7 @@ Future<void> initApp() async {
   _initLocalizations();
 }
 
-T _getTheme<T>(BuildContext context) => AppTheme.of(context) as T;
+T _getTheme<T>(BuildContext context) => ImpaktfullTheme.of(context) as T;
 void _initTheme() {
   themeLookup = _getTheme;
 }

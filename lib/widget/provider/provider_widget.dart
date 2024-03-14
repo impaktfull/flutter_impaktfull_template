@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_template/theme/app_theme.dart';
 import 'package:flutter_template/util/locale/localization.dart';
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
@@ -11,7 +9,7 @@ class ProviderWidget<T extends ChangeNotifier> extends StatelessWidget {
   final Widget Function(
     BuildContext context,
     T viewModel,
-    AppTheme theme,
+    ImpaktfullTheme theme,
     Localization localization,
   )? builderWithThemeAndLocalizations;
   final T Function() create;
@@ -25,7 +23,7 @@ class ProviderWidget<T extends ChangeNotifier> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseProviderWidget<T, AppTheme, Localization>(
+    return BaseProviderWidget<T, ImpaktfullTheme, Localization>(
       create: () => create(),
       builder: builder,
       builderWithThemeAndLocalizations: builderWithThemeAndLocalizations,

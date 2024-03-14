@@ -5,8 +5,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i1;
 import 'package:flutter/material.dart';
+import 'package:impaktfull_architecture/impaktfull_architecture.dart' as _i1;
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 import '../screen/debug/debug_change_language_screen.dart';
@@ -18,11 +18,14 @@ mixin BaseNavigator {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    final arguments = settings.arguments is Map
+        ? (settings.arguments as Map).cast<String, dynamic>()
+        : null;
     switch (settings.name) {
       case RouteNames.homeScreen:
         return FadeInRoute<void>(
           builder: (_) => HomeScreen(
-            key: (settings.arguments as Map<String, dynamic>?)?['key'] as Key?,
+            key: arguments?['key'] as Key?,
           ),
           settings: settings,
           fullscreenDialog: false,
@@ -30,7 +33,7 @@ mixin BaseNavigator {
       case RouteNames.splashScreen:
         return MaterialPageRoute<void>(
           builder: (_) => SplashScreen(
-            key: (settings.arguments as Map<String, dynamic>?)?['key'] as Key?,
+            key: arguments?['key'] as Key?,
           ),
           settings: settings,
           fullscreenDialog: false,
@@ -38,7 +41,7 @@ mixin BaseNavigator {
       case RouteNames.debugChangeLanguageScreen:
         return MaterialPageRoute<void>(
           builder: (_) => DebugChangeLanguageScreen(
-            key: (settings.arguments as Map<String, dynamic>?)?['key'] as Key?,
+            key: arguments?['key'] as Key?,
           ),
           settings: settings,
           fullscreenDialog: false,
@@ -46,7 +49,7 @@ mixin BaseNavigator {
       case RouteNames.debugScreen:
         return MaterialPageRoute<void>(
           builder: (_) => DebugScreen(
-            key: (settings.arguments as Map<String, dynamic>?)?['key'] as Key?,
+            key: arguments?['key'] as Key?,
           ),
           settings: settings,
           fullscreenDialog: false,

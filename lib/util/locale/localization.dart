@@ -27,12 +27,12 @@ class Localization {
   Localization({required this.locale});
 
   static Future<Localization> load({
-    required Locale locale, 
+    required Locale locale,
     LocalizationOverrides? localizationOverrides,
     bool showLocalizationKeys = false,
     bool useCaching = true,
     AssetBundle? bundle,
-    }) async {
+  }) async {
     final localizations = Localization(locale: locale);
     if (showLocalizationKeys) {
       return localizations;
@@ -59,10 +59,31 @@ class Localization {
 
   /// Translations:
   ///
-  /// en:  **'Flutter Template'**
+  /// en:  **'Change language'**
   ///
-  /// nl:  **'Flutter Template'**
-  String get homeTitle => _t(LocalizationKeys.homeTitle);
+  /// nl:  **'Taal veranderen'**
+  String get debugChangeLanguageTitle => _t(LocalizationKeys.debugChangeLanguageTitle);
+
+  /// Translations:
+  ///
+  /// en:  **'Change language'**
+  ///
+  /// nl:  **'Taal veranderen'**
+  String get debugListItemChangeLangague => _t(LocalizationKeys.debugListItemChangeLangague);
+
+  /// Translations:
+  ///
+  /// en:  **'Debug'**
+  ///
+  /// nl:  **'Debug'**
+  String get debugTitle => _t(LocalizationKeys.debugTitle);
+
+  /// Translations:
+  ///
+  /// en:  **'System language'**
+  ///
+  /// nl:  **'Taal van het systeem'**
+  String get generalSystemLanguage => _t(LocalizationKeys.generalSystemLanguage);
 
   /// Translations:
   ///
@@ -73,25 +94,10 @@ class Localization {
 
   /// Translations:
   ///
-  /// en:  **'Debug'**
+  /// en:  **'Flutter Template'**
   ///
-  /// nl:  **''**
-  String get debugTitle => _t(LocalizationKeys.debugTitle);
-
-  /// Translations:
-  ///
-  /// en:  **'Change language'**
-  ///
-  /// nl:  **''**
-  String get debugListItemChangeLangague => _t(LocalizationKeys.debugListItemChangeLangague);
-
-  /// Translations:
-  ///
-  /// en:  **'Change language'**
-  ///
-  /// nl:  **''**
-  String get debugChangeLanguageTitle => _t(LocalizationKeys.debugChangeLanguageTitle);
+  /// nl:  **'Flutter Template'**
+  String get homeTitle => _t(LocalizationKeys.homeTitle);
 
   String getTranslation(String key, {List<dynamic>? args}) => _t(key, args: args ?? <dynamic>[]);
-
 }

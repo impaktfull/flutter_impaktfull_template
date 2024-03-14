@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_template/theme/app_theme.dart';
 import 'package:flutter_template/util/locale/localization.dart';
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
@@ -20,7 +19,7 @@ class AppThemeLocalizer extends StatelessWidget {
     return ThemeLocalizer(
       builder: builder,
       builderTheme: builderTheme,
-      builderLocalizations: builderLocalizations,
+      builderLocalization: builderLocalizations,
     );
   }
 }
