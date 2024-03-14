@@ -8,16 +8,18 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter_template/di/injectable.dart' as _i12;
+import 'package:flutter_template/di/injectable.dart' as _i13;
 import 'package:flutter_template/navigator/main_navigator.dart' as _i6;
 import 'package:flutter_template/repo/locale/locale_repository.dart' as _i5;
-import 'package:flutter_template/viewmodel/debug/change_language/debug_change_language_viewmodel.dart'
+import 'package:flutter_template/viewmodel/debug/debug_change_language_viewmodel.dart'
     as _i9;
-import 'package:flutter_template/viewmodel/debug/debug_viewmodel.dart' as _i10;
+import 'package:flutter_template/viewmodel/debug/debug_change_target_platform_viewmodel.dart'
+    as _i10;
+import 'package:flutter_template/viewmodel/debug/debug_viewmodel.dart' as _i11;
 import 'package:flutter_template/viewmodel/global/global_viewmodel.dart' as _i4;
 import 'package:flutter_template/viewmodel/global/translations_viewmodel.dart'
     as _i8;
-import 'package:flutter_template/viewmodel/home/home_viewmodel.dart' as _i11;
+import 'package:flutter_template/viewmodel/home/home_viewmodel.dart' as _i12;
 import 'package:flutter_template/viewmodel/splash/splash_viewmodel.dart' as _i7;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:impaktfull_architecture/impaktfull_architecture.dart' as _i3;
@@ -49,14 +51,20 @@ extension GetItInjectableX on _i1.GetIt {
               gh<_i8.TranslationsViewmodel>(),
               gh<_i6.MainNavigator>(),
             ));
-    gh.factory<_i10.DebugViewModel>(() => _i10.DebugViewModel(
-          gh<_i6.MainNavigator>(),
+    gh.factory<_i10.DebugChangeTargetPlatformViewModel>(
+        () => _i10.DebugChangeTargetPlatformViewModel(
+              gh<_i4.GlobalViewModel>(),
+              gh<_i6.MainNavigator>(),
+            ));
+    gh.factory<_i11.DebugViewModel>(() => _i11.DebugViewModel(
+          gh<_i4.GlobalViewModel>(),
           gh<_i8.TranslationsViewmodel>(),
+          gh<_i6.MainNavigator>(),
         ));
-    gh.factory<_i11.HomeViewmodel>(
-        () => _i11.HomeViewmodel(gh<_i6.MainNavigator>()));
+    gh.factory<_i12.HomeViewmodel>(
+        () => _i12.HomeViewmodel(gh<_i6.MainNavigator>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i12.RegisterModule {}
+class _$RegisterModule extends _i13.RegisterModule {}

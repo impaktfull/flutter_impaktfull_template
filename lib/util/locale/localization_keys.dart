@@ -11,6 +11,13 @@ class LocalizationKeys {
 
   /// Translations:
   ///
+  /// en:  **'Change platform'**
+  ///
+  /// nl:  **'Platform veranderen'**
+  static const debugChangeTargetPlatform = 'debug_change_target_platform';
+
+  /// Translations:
+  ///
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
@@ -29,6 +36,27 @@ class LocalizationKeys {
   ///
   /// nl:  **'Taal van het systeem'**
   static const generalSystemLanguage = 'general_system_language';
+
+  /// Translations:
+  ///
+  /// en:  **'Android'**
+  ///
+  /// nl:  **'Android'**
+  static const generalSystemTargetAndroid = 'general_system_target_android';
+
+  /// Translations:
+  ///
+  /// en:  **'System'**
+  ///
+  /// nl:  **'Systeem'**
+  static const generalSystemTargetDefault = 'general_system_target_default';
+
+  /// Translations:
+  ///
+  /// en:  **'iOS'**
+  ///
+  /// nl:  **'iOS'**
+  static const generalSystemTargetIos = 'general_system_target_ios';
 
   /// Translations:
   ///

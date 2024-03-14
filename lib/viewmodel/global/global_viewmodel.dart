@@ -7,4 +7,9 @@ class GlobalViewModel extends ChangeNotifierEx {
   TargetPlatform? get targetPlatform => _targetPlatform;
 
   Future<void> init() async {}
+
+  void setTargetPlatform(TargetPlatform? targetPlatform) {
+    _targetPlatform = targetPlatform;
+    notifyListeners();
+  }
 }

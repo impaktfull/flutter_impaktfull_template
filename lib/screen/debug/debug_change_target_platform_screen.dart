@@ -1,18 +1,18 @@
 import 'package:flutter_navigation_generator_annotations/flutter_navigation_generator_annotations.dart';
 import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/viewmodel/debug/debug_change_language_viewmodel.dart';
+import 'package:flutter_template/viewmodel/debug/debug_change_target_platform_viewmodel.dart';
 import 'package:flutter_template/widget/provider/provider_widget.dart';
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 @flutterRoute
-class DebugChangeLanguageScreen extends StatelessWidget {
-  const DebugChangeLanguageScreen({
+class DebugChangeTargetPlatformScreen extends StatelessWidget {
+  const DebugChangeTargetPlatformScreen({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ProviderWidget<DebugChangeLanguageViewModel>(
+    return ProviderWidget<DebugChangeTargetPlatformViewModel>(
       create: () => getIt()..init(),
       builderWithThemeAndLocalizations: (context, viewModel, theme, localization) => ImpaktfullScreen(
         title: localization.debugChangeLanguageTitle,
@@ -22,11 +22,11 @@ class DebugChangeLanguageScreen extends StatelessWidget {
             ImpaktfullSeparatedColumn(
               type: ImpaktfullSeparatorType.card,
               children: [
-                for (final item in viewModel.supportedLocales)
+                for (final item in viewModel.supportedTargetPlatforms)
                   ImpaktfullSimpleListItem(
-                    title: viewModel.getTranslatedLocale(item, localization),
+                    title: viewModel.getTranslation(item, localization),
                     onTap: () => viewModel.onLocaleTapped(item),
-                    trailingWidget: viewModel.isLocaleSelected(item)
+                    trailingWidget: viewModel.isTargetPlatformSelected(item)
                         ? Icon(
                             Icons.check,
                             size: 16,

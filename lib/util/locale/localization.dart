@@ -66,6 +66,13 @@ class Localization {
 
   /// Translations:
   ///
+  /// en:  **'Change platform'**
+  ///
+  /// nl:  **'Platform veranderen'**
+  String get debugChangeTargetPlatform => _t(LocalizationKeys.debugChangeTargetPlatform);
+
+  /// Translations:
+  ///
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
@@ -84,6 +91,27 @@ class Localization {
   ///
   /// nl:  **'Taal van het systeem'**
   String get generalSystemLanguage => _t(LocalizationKeys.generalSystemLanguage);
+
+  /// Translations:
+  ///
+  /// en:  **'Android'**
+  ///
+  /// nl:  **'Android'**
+  String get generalSystemTargetAndroid => _t(LocalizationKeys.generalSystemTargetAndroid);
+
+  /// Translations:
+  ///
+  /// en:  **'System'**
+  ///
+  /// nl:  **'Systeem'**
+  String get generalSystemTargetDefault => _t(LocalizationKeys.generalSystemTargetDefault);
+
+  /// Translations:
+  ///
+  /// en:  **'iOS'**
+  ///
+  /// nl:  **'iOS'**
+  String get generalSystemTargetIos => _t(LocalizationKeys.generalSystemTargetIos);
 
   /// Translations:
   ///

@@ -20,11 +20,17 @@ class DebugScreen extends StatelessWidget {
         child: ImpaktfullListView(
           children: [
             ImpaktfullSeparatedColumn(
+              type: ImpaktfullSeparatorType.card,
               children: [
                 ImpaktfullListItem(
                   title: localization.debugListItemChangeLangague,
                   subTitle: viewModel.getCurrentLanguage(localization),
                   onTap: viewModel.onChangeLanguageTapped,
+                ),
+                ImpaktfullListItem(
+                  title: localization.debugChangeTargetPlatform,
+                  subTitle: viewModel.getCurrentTargetPlatform(localization),
+                  onTap: viewModel.onChangeTargetPlatformTapped,
                 ),
               ],
             ),

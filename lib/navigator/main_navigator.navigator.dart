@@ -10,6 +10,7 @@ import 'package:impaktfull_architecture/impaktfull_architecture.dart' as _i1;
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 import '../screen/debug/debug_change_language_screen.dart';
+import '../screen/debug/debug_change_target_platform_screen.dart';
 import '../screen/debug/debug_screen.dart';
 import '../screen/home/home_screen.dart';
 import '../screen/splash/splash_screen.dart';
@@ -54,6 +55,14 @@ mixin BaseNavigator {
           settings: settings,
           fullscreenDialog: false,
         );
+      case RouteNames.debugChangeTargetPlatformScreen:
+        return MaterialPageRoute<void>(
+          builder: (_) => DebugChangeTargetPlatformScreen(
+            key: arguments?['key'] as Key?,
+          ),
+          settings: settings,
+          fullscreenDialog: false,
+        );
     }
     return null;
   }
@@ -77,6 +86,11 @@ mixin BaseNavigator {
   Future<void> goToDebugScreen({_i1.Key? key}) async =>
       navigatorKey.currentState?.pushNamed<dynamic>(
         RouteNames.debugScreen,
+        arguments: {'key': key},
+      );
+  Future<void> goToDebugChangeTargetPlatformScreen({_i1.Key? key}) async =>
+      navigatorKey.currentState?.pushNamed<dynamic>(
+        RouteNames.debugChangeTargetPlatformScreen,
         arguments: {'key': key},
       );
   void goBack() => navigatorKey.currentState?.pop();
@@ -105,4 +119,7 @@ class RouteNames {
   static const debugChangeLanguageScreen = '/debug-change-language';
 
   static const debugScreen = '/debug';
+
+  static const debugChangeTargetPlatformScreen =
+      '/debug-change-target-platform';
 }
