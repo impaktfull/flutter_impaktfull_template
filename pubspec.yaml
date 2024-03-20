@@ -12,7 +12,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_navigation_generator_annotations: ^1.0.1
-  impaktfull_architecture: ^0.0.9
+  impaktfull_architecture: ^0.0.10
   sprintf: ^7.0.0
 
 dev_dependencies:
