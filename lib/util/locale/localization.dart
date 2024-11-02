@@ -65,6 +65,14 @@ class Localization {
 
   /// Translations:
   ///
+  /// en:  **'Language changed successfully'**
+  ///
+  /// nl:  **'Language changed successfully'**
+  String get debugChangeLangagueSuccess =>
+      _t(LocalizationKeys.debugChangeLangagueSuccess);
+
+  /// Translations:
+  ///
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
@@ -81,11 +89,27 @@ class Localization {
 
   /// Translations:
   ///
+  /// en:  **'Platform changed successfully'**
+  ///
+  /// nl:  **'Platform changed successfully'**
+  String get debugChangeTargetPlatformSuccess =>
+      _t(LocalizationKeys.debugChangeTargetPlatformSuccess);
+
+  /// Translations:
+  ///
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
   String get debugListItemChangeLangague =>
       _t(LocalizationKeys.debugListItemChangeLangague);
+
+  /// Translations:
+  ///
+  /// en:  **'Change platform'**
+  ///
+  /// nl:  **'Platform veranderen'**
+  String get debugListItemChangeTargetPlatform =>
+      _t(LocalizationKeys.debugListItemChangeTargetPlatform);
 
   /// Translations:
   ///

@@ -26,6 +26,9 @@ class DebugChangeTargetPlatformViewModel extends ChangeNotifierEx {
   Future<void> onLocaleTapped(TargetPlatform? targetPlatform) async {
     _globalViewModel.setTargetPlatform(targetPlatform);
     notifyListeners();
+    _mainNavigator.showSuccessNotificationWithLocalization(
+      title: (localization) => localization.debugChangeTargetPlatformSuccess,
+    );
   }
 
   bool isTargetPlatformSelected(TargetPlatform? targetPlatform) =>

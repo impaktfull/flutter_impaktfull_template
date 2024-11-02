@@ -1,7 +1,10 @@
 {
+  "debug_change_langague_success": "Taal succesvol gewijzigd",
   "debug_change_language_title": "Taal veranderen",
   "debug_change_target_platform": "Platform veranderen",
+  "debug_change_target_platform_success": "Platform succesvol gewijzigd",
   "debug_list_item_change_langague": "Taal veranderen",
+  "debug_list_item_change_target_platform": "Platform veranderen",
   "debug_title": "Debug",
   "general_system_language": "Taal van het systeem",
   "general_system_target_android": "Android",

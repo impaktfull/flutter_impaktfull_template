@@ -30,7 +30,7 @@ class DebugScreen extends StatelessWidget {
                   onTap: viewModel.onChangeLanguageTapped,
                 ),
                 ImpaktfullUiListItem(
-                  title: localization.debugChangeTargetPlatform,
+                  title: localization.debugListItemChangeTargetPlatform,
                   subtitle: viewModel.getCurrentTargetPlatform(localization),
                   onTap: viewModel.onChangeTargetPlatformTapped,
                 ),

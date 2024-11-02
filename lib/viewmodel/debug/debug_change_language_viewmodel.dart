@@ -28,6 +28,10 @@ class DebugChangeLanguageViewModel extends ChangeNotifierEx {
   Future<void> onLocaleTapped(Locale? locale) async {
     await _translationsViewmodel.switchToLocale(locale);
     notifyListeners();
+    await Future.delayed(const Duration(milliseconds: 100));
+    _mainNavigator.showSuccessNotificationWithLocalization(
+      title: (localization) => localization.debugChangeLangagueSuccess,
+    );
   }
 
   bool isLocaleSelected(Locale? locale) =>

@@ -4,6 +4,13 @@
 class LocalizationKeys {
   /// Translations:
   ///
+  /// en:  **'Language changed successfully'**
+  ///
+  /// nl:  **'Language changed successfully'**
+  static const debugChangeLangagueSuccess = 'debug_change_langague_success';
+
+  /// Translations:
+  ///
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
@@ -18,10 +25,26 @@ class LocalizationKeys {
 
   /// Translations:
   ///
+  /// en:  **'Platform changed successfully'**
+  ///
+  /// nl:  **'Platform changed successfully'**
+  static const debugChangeTargetPlatformSuccess =
+      'debug_change_target_platform_success';
+
+  /// Translations:
+  ///
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
   static const debugListItemChangeLangague = 'debug_list_item_change_langague';
+
+  /// Translations:
+  ///
+  /// en:  **'Change platform'**
+  ///
+  /// nl:  **'Platform veranderen'**
+  static const debugListItemChangeTargetPlatform =
+      'debug_list_item_change_target_platform';
 
   /// Translations:
   ///

@@ -1,7 +1,10 @@
 {
+  "debug_change_langague_success": "Language changed successfully",
   "debug_change_language_title": "Change language",
   "debug_change_target_platform": "Change platform",
+  "debug_change_target_platform_success": "Platform changed successfully",
   "debug_list_item_change_langague": "Change language",
+  "debug_list_item_change_target_platform": "Change platform",
   "debug_title": "Debug",
   "general_system_language": "System language",
   "general_system_target_android": "Android",
