@@ -28,4 +28,5 @@ abstract class RegisterModule {
 
 dynamic _parseAndDecode(String response) => jsonDecode(response);
 
-dynamic parseJson(String text) => compute<String, dynamic>(_parseAndDecode, text);
+dynamic parseJson(String text) =>
+    compute<String, dynamic>(_parseAndDecode, text);

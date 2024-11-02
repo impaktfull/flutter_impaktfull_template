@@ -18,7 +18,8 @@ class DebugViewModel extends ChangeNotifierEx {
 
   Future<void> init() async {}
 
-  String getCurrentLanguage(Localization localization) => _translationsViewmodel.getCurrentLanguage(localization);
+  String getCurrentLanguage(Localization localization) =>
+      _translationsViewmodel.getCurrentLanguage(localization);
 
   String getCurrentTargetPlatform(Localization localization) {
     switch (_globalViewModel.targetPlatform) {
@@ -31,9 +32,11 @@ class DebugViewModel extends ChangeNotifierEx {
     }
   }
 
-  void onChangeLanguageTapped() => _mainNavigator.goToDebugChangeLanguageScreen();
+  void onChangeLanguageTapped() =>
+      _mainNavigator.goToDebugChangeLanguageScreen();
 
-  void onChangeTargetPlatformTapped() => _mainNavigator.goToDebugChangeTargetPlatformScreen();
+  void onChangeTargetPlatformTapped() =>
+      _mainNavigator.goToDebugChangeTargetPlatformScreen();
 
   void onBackTapped() => _mainNavigator.goBack();
 }

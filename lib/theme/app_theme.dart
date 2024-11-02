@@ -1,5 +1,5 @@
-import 'package:impaktfull_architecture/impaktfull_architecture.dart';
+import 'package:impaktfull_ui_2/impaktfull_ui.dart';
 
 class AppTheme {
-  static ImpaktfullTheme getTheme() => ImpaktfullTheme.impaktfullBranding();
+  static ImpaktfullUiTheme getTheme() => ImpaktfullUiTheme.getDefault();
 }

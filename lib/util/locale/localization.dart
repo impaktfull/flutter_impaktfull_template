@@ -18,7 +18,8 @@ class Localization {
   var _localisedValues = <String, dynamic>{};
   var _localisedOverrideValues = <String, dynamic>{};
 
-  static Localization of(BuildContext context) => Localizations.of<Localization>(context, Localization)!;
+  static Localization of(BuildContext context) =>
+      Localizations.of<Localization>(context, Localization)!;
 
   /// The locale is used to get the correct json locale.
   /// It can later be used to check what the locale is that was used to load this Localization instance.
@@ -38,17 +39,22 @@ class Localization {
       return localizations;
     }
     if (localizationOverrides != null) {
-      final overrideLocalizations = await localizationOverrides.getOverriddenLocalizations(locale);
+      final overrideLocalizations =
+          await localizationOverrides.getOverriddenLocalizations(locale);
       localizations._localisedOverrideValues = overrideLocalizations;
     }
-    final jsonContent = await (bundle ?? rootBundle).loadString('assets/locale/${locale.toLanguageTag()}.json', cache: useCaching);
-    localizations._localisedValues = json.decode(jsonContent) as Map<String, dynamic>;
+    final jsonContent = await (bundle ?? rootBundle).loadString(
+        'assets/locale/${locale.toLanguageTag()}.json',
+        cache: useCaching);
+    localizations._localisedValues =
+        json.decode(jsonContent) as Map<String, dynamic>;
     return localizations;
   }
 
   String _t(String key, {List<dynamic>? args}) {
     try {
-      final value = (_localisedOverrideValues[key] ?? _localisedValues[key]) as String?;
+      final value =
+          (_localisedOverrideValues[key] ?? _localisedValues[key]) as String?;
       if (value == null) return key;
       if (args == null || args.isEmpty) return value;
       return sprintf(value, args);
@@ -62,21 +68,24 @@ class Localization {
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
-  String get debugChangeLanguageTitle => _t(LocalizationKeys.debugChangeLanguageTitle);
+  String get debugChangeLanguageTitle =>
+      _t(LocalizationKeys.debugChangeLanguageTitle);
 
   /// Translations:
   ///
   /// en:  **'Change platform'**
   ///
   /// nl:  **'Platform veranderen'**
-  String get debugChangeTargetPlatform => _t(LocalizationKeys.debugChangeTargetPlatform);
+  String get debugChangeTargetPlatform =>
+      _t(LocalizationKeys.debugChangeTargetPlatform);
 
   /// Translations:
   ///
   /// en:  **'Change language'**
   ///
   /// nl:  **'Taal veranderen'**
-  String get debugListItemChangeLangague => _t(LocalizationKeys.debugListItemChangeLangague);
+  String get debugListItemChangeLangague =>
+      _t(LocalizationKeys.debugListItemChangeLangague);
 
   /// Translations:
   ///
@@ -90,28 +99,32 @@ class Localization {
   /// en:  **'System language'**
   ///
   /// nl:  **'Taal van het systeem'**
-  String get generalSystemLanguage => _t(LocalizationKeys.generalSystemLanguage);
+  String get generalSystemLanguage =>
+      _t(LocalizationKeys.generalSystemLanguage);
 
   /// Translations:
   ///
   /// en:  **'Android'**
   ///
   /// nl:  **'Android'**
-  String get generalSystemTargetAndroid => _t(LocalizationKeys.generalSystemTargetAndroid);
+  String get generalSystemTargetAndroid =>
+      _t(LocalizationKeys.generalSystemTargetAndroid);
 
   /// Translations:
   ///
   /// en:  **'System'**
   ///
   /// nl:  **'Systeem'**
-  String get generalSystemTargetDefault => _t(LocalizationKeys.generalSystemTargetDefault);
+  String get generalSystemTargetDefault =>
+      _t(LocalizationKeys.generalSystemTargetDefault);
 
   /// Translations:
   ///
   /// en:  **'iOS'**
   ///
   /// nl:  **'iOS'**
-  String get generalSystemTargetIos => _t(LocalizationKeys.generalSystemTargetIos);
+  String get generalSystemTargetIos =>
+      _t(LocalizationKeys.generalSystemTargetIos);
 
   /// Translations:
   ///
@@ -127,5 +140,6 @@ class Localization {
   /// nl:  **'Flutter Template'**
   String get homeTitle => _t(LocalizationKeys.homeTitle);
 
-  String getTranslation(String key, {List<dynamic>? args}) => _t(key, args: args ?? <dynamic>[]);
+  String getTranslation(String key, {List<dynamic>? args}) =>
+      _t(key, args: args ?? <dynamic>[]);
 }

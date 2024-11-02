@@ -14,6 +14,12 @@
             ]
         },
         {
+            "name": "dev (no flavor)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+        },
+        {
             "name": "alpha",
             "request": "launch",
             "type": "dart",

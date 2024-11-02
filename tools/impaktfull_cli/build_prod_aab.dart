@@ -4,7 +4,8 @@ import 'build_config.dart';
 
 Future<void> main(List<String> arguments) => ImpaktfullCli().run(
       (cli) async {
-        final playstoreCredentialsFile = await cli.onePasswordPlugin.downloadServiceAccountCredentials(
+        final playstoreCredentialsFile =
+            await cli.onePasswordPlugin.downloadServiceAccountCredentials(
           opUuid: BuildConfig.opUuidPlaystoreCredentials,
         );
         final buildNr = await cli.ciCdPlugin.flutterBuildPlugin.versionBump(

@@ -23,7 +23,8 @@ class _LocaleRepository implements LocaleRepository {
     if (locale == null) {
       await _sharedPrefsStore.removeKey(key: StoreKeys.locale);
     } else {
-      await _sharedPrefsStore.saveString(key: StoreKeys.locale, value: locale.languageCode);
+      await _sharedPrefsStore.saveString(
+          key: StoreKeys.locale, value: locale.languageCode);
     }
   }
 

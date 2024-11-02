@@ -57,7 +57,8 @@ class TranslationsViewmodel extends ChangeNotifierEx {
     notifyListeners();
   }
 
-  String getCurrentLanguage(Localization localization) => getTranslatedLocale(_localeDelegate.activeLocale, localization);
+  String getCurrentLanguage(Localization localization) =>
+      getTranslatedLocale(_localeDelegate.activeLocale, localization);
 
   String getTranslatedLocale(
     Locale? locale,

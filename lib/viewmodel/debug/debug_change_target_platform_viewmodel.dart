@@ -28,7 +28,8 @@ class DebugChangeTargetPlatformViewModel extends ChangeNotifierEx {
     notifyListeners();
   }
 
-  bool isTargetPlatformSelected(TargetPlatform? targetPlatform) => _globalViewModel.targetPlatform == targetPlatform;
+  bool isTargetPlatformSelected(TargetPlatform? targetPlatform) =>
+      _globalViewModel.targetPlatform == targetPlatform;
 
   void onBackTapped() => _mainNavigator.goBack();
 

@@ -30,7 +30,8 @@ class DebugChangeLanguageViewModel extends ChangeNotifierEx {
     notifyListeners();
   }
 
-  bool isLocaleSelected(Locale? locale) => _translationsViewmodel.isLocaleSelected(locale);
+  bool isLocaleSelected(Locale? locale) =>
+      _translationsViewmodel.isLocaleSelected(locale);
 
   void onBackTapped() => _mainNavigator.goBack();
 }

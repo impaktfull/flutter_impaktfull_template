@@ -4,8 +4,10 @@ import 'package:impaktfull_architecture/impaktfull_architecture.dart';
 
 class AppThemeLocalizer extends StatelessWidget {
   final Widget Function(BuildContext context, AppTheme theme)? builderTheme;
-  final Widget Function(BuildContext context, Localization localization)? builderLocalizations;
-  final Widget Function(BuildContext context, AppTheme theme, Localization localization)? builder;
+  final Widget Function(BuildContext context, Localization localization)?
+      builderLocalizations;
+  final Widget Function(
+      BuildContext context, AppTheme theme, Localization localization)? builder;
 
   const AppThemeLocalizer({
     this.builder,

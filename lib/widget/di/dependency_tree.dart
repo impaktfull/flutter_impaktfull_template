@@ -22,7 +22,8 @@ class DependencyTreeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderWidget<GlobalViewModel>(
       create: () => getIt()..init(),
-      builder: (context, globalViewModel) => ProviderWidget<TranslationsViewmodel>(
+      builder: (context, globalViewModel) =>
+          ProviderWidget<TranslationsViewmodel>(
         create: () => getIt()..init(),
         builder: (context, translationsViewModel) => builder(
           context,

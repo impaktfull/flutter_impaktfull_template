@@ -4,7 +4,11 @@
 // FlutterNavigatorGenerator
 // **************************************************************************
 
+// ignore_for_file: prefer_const_constructors
+
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:impaktfull_architecture/impaktfull_architecture.dart' as _i1;
 import 'package:impaktfull_architecture/impaktfull_architecture.dart';
@@ -21,12 +25,16 @@ mixin BaseNavigator {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     final arguments = settings.arguments is Map
         ? (settings.arguments as Map).cast<String, dynamic>()
-        : null;
-    switch (settings.name) {
+        : <String, dynamic>{};
+    final settingsUri = Uri.parse(settings.name ?? '');
+    settingsUri.queryParameters.forEach((key, value) {
+      arguments[key] ??= value;
+    });
+    switch (settingsUri.path) {
       case RouteNames.homeScreen:
         return FadeInRoute<void>(
           builder: (_) => HomeScreen(
-            key: arguments?['key'] as Key?,
+            key: arguments['key'] as Key?,
           ),
           settings: settings,
           fullscreenDialog: false,
@@ -34,23 +42,7 @@ mixin BaseNavigator {
       case RouteNames.splashScreen:
         return MaterialPageRoute<void>(
           builder: (_) => SplashScreen(
-            key: arguments?['key'] as Key?,
-          ),
-          settings: settings,
-          fullscreenDialog: false,
-        );
-      case RouteNames.debugChangeLanguageScreen:
-        return MaterialPageRoute<void>(
-          builder: (_) => DebugChangeLanguageScreen(
-            key: arguments?['key'] as Key?,
-          ),
-          settings: settings,
-          fullscreenDialog: false,
-        );
-      case RouteNames.debugScreen:
-        return MaterialPageRoute<void>(
-          builder: (_) => DebugScreen(
-            key: arguments?['key'] as Key?,
+            key: arguments['key'] as Key?,
           ),
           settings: settings,
           fullscreenDialog: false,
@@ -58,7 +50,23 @@ mixin BaseNavigator {
       case RouteNames.debugChangeTargetPlatformScreen:
         return MaterialPageRoute<void>(
           builder: (_) => DebugChangeTargetPlatformScreen(
-            key: arguments?['key'] as Key?,
+            key: arguments['key'] as Key?,
+          ),
+          settings: settings,
+          fullscreenDialog: false,
+        );
+      case RouteNames.debugChangeLanguageScreen:
+        return MaterialPageRoute<void>(
+          builder: (_) => DebugChangeLanguageScreen(
+            key: arguments['key'] as Key?,
+          ),
+          settings: settings,
+          fullscreenDialog: false,
+        );
+      case RouteNames.debugScreen:
+        return MaterialPageRoute<void>(
+          builder: (_) => DebugScreen(
+            key: arguments['key'] as Key?,
           ),
           settings: settings,
           fullscreenDialog: false,
@@ -78,6 +86,11 @@ mixin BaseNavigator {
         RouteNames.splashScreen,
         arguments: {'key': key},
       );
+  Future<void> goToDebugChangeTargetPlatformScreen({_i1.Key? key}) async =>
+      navigatorKey.currentState?.pushNamed<dynamic>(
+        RouteNames.debugChangeTargetPlatformScreen,
+        arguments: {'key': key},
+      );
   Future<void> goToDebugChangeLanguageScreen({_i1.Key? key}) async =>
       navigatorKey.currentState?.pushNamed<dynamic>(
         RouteNames.debugChangeLanguageScreen,
@@ -86,11 +99,6 @@ mixin BaseNavigator {
   Future<void> goToDebugScreen({_i1.Key? key}) async =>
       navigatorKey.currentState?.pushNamed<dynamic>(
         RouteNames.debugScreen,
-        arguments: {'key': key},
-      );
-  Future<void> goToDebugChangeTargetPlatformScreen({_i1.Key? key}) async =>
-      navigatorKey.currentState?.pushNamed<dynamic>(
-        RouteNames.debugChangeTargetPlatformScreen,
         arguments: {'key': key},
       );
   void goBack() => navigatorKey.currentState?.pop();
@@ -112,14 +120,19 @@ mixin BaseNavigator {
 }
 
 class RouteNames {
+  /// /home
   static const homeScreen = '/home';
 
+  /// /splash
   static const splashScreen = '/splash';
 
-  static const debugChangeLanguageScreen = '/debug-change-language';
-
-  static const debugScreen = '/debug';
-
+  /// /debug-change-target-platform
   static const debugChangeTargetPlatformScreen =
       '/debug-change-target-platform';
+
+  /// /debug-change-language
+  static const debugChangeLanguageScreen = '/debug-change-language';
+
+  /// /debug
+  static const debugScreen = '/debug';
 }
